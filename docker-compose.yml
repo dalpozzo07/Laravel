@@ -9,6 +9,7 @@ services:
             - ./:/var/www
         depends_on:
             - redis
+            - db
         networks:
             - laravel
 
@@ -42,7 +43,7 @@ services:
         image: phpmyadmin/phpmyadmin
         restart: unless-stopped
         ports:
-            - "8075:80"
+            - "8081:80"
         environment:
             PMA_HOST: db
             PMA_PORT: 3306
